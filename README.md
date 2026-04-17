@@ -1,16 +1,61 @@
-# React + Vite
+# 💼 Tax Loss Harvesting Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React-based web application that simulates **Tax Loss Harvesting**, allowing users to visualize and optimize capital gains in real-time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+👉 [https://your-vercel-link](https://tax-loss-harvesting-app-lac.vercel.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Overview
 
-## Expanding the ESLint configuration
+This application helps users understand how selling certain assets can offset capital gains and reduce taxable income. It dynamically recalculates gains based on user-selected holdings.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 📊 **Pre & Post Harvest Comparison**
+  - Displays capital gains before and after harvesting
+
+- ⚡ **Real-Time Updates**
+  - Selecting assets instantly updates profit/loss calculations
+
+- 📈 **Short-Term & Long-Term Gains**
+  - Separate handling of STCG and LTCG
+
+- 💰 **Dynamic Gain Calculation**
+  - Positive values → Profits  
+  - Negative values → Losses  
+
+- 🧮 **Realised Capital Gains**
+  - Automatically computed from ST + LT gains
+
+- 📦 **Holdings Table**
+  - Select/deselect assets
+  - Amount to sell updates dynamically
+
+- 🎨 **Modern Fintech UI**
+  - Clean, responsive design using Tailwind CSS
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend**: React (Vite)
+- **Styling**: Tailwind CSS
+- **Language**: JavaScript (ES6)
+- **State Management**: React Hooks (`useState`, `useEffect`)
+- **Data Handling**: Mock APIs
+
+---
+
+## ⚙️ Setup Instructions
+
+Clone the repository:
+
+```bash
+git clone https://github.com/ashwanth-commits/tax-loss-harvesting-app.git
+cd tax-loss-harvesting-app
