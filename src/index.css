@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+.stagger-harvest > :nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.stagger-harvest > :nth-child(2) {
+  animation-delay: 85ms;
+}
+
+.table-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(63 63 70 / 0.8) rgb(24 24 27 / 0.5);
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: rgb(24 24 27 / 0.6);
+  border-radius: 9999px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: rgb(63 63 70 / 0.85);
+  border-radius: 9999px;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    font-family: var(--font-sans);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    font-family: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-up {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      opacity: 1;
+      transform: none;
+    }
+
+    .stagger-harvest > :nth-child(2) {
+      animation-delay: 0ms;
+    }
+  }
+}
