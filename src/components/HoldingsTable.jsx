@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { formatInr, formatShares } from '../utils/format'
 
 const checkboxClass =
@@ -36,8 +36,11 @@ export function HoldingsTable({
   onToggleAsset,
   onToggleSelectAll,
 }) {
+  const [showAll, setShowAll] = useState(false)
   const selectedSet = new Set(selectedAssets)
   const selectAllRef = useRef(null)
+
+  const visibleHoldings = showAll ? holdings : holdings.slice(0, 3)
 
   const allSelected =
     holdings.length > 0 && selectedAssets.length === holdings.length
@@ -117,7 +120,7 @@ export function HoldingsTable({
               </tr>
             </thead>
             <tbody>
-              {holdings.map((row, index) => {
+              {visibleHoldings.map((row, index) => {
                 const isSelected = selectedSet.has(row.symbol)
                 const zebra = index % 2 === 0 ? 'bg-zinc-900/35' : 'bg-zinc-950/25'
                 return (
@@ -204,6 +207,17 @@ export function HoldingsTable({
             </tbody>
           </table>
         </div>
+        {holdings.length > 3 ? (
+          <div className="flex justify-center px-4 pb-2 sm:px-0">
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            >
+              {showAll ? 'Show Less' : 'View All'}
+            </button>
+          </div>
+        ) : null}
       </div>
     </section>
   )

@@ -37,6 +37,28 @@ const DASHBOARD_SEED = {
       ltcg_gain: -1_250,
       wash: 'Clear',
     },
+    {
+      symbol: 'ETH',
+      name: 'Ethereum',
+      shares: 5,
+      cost: 2000,
+      value: 2200,
+      unrealized: 200,
+      stcg_gain: 500,
+      ltcg_gain: -300,
+      wash: 'Clear',
+    },
+    {
+      symbol: 'SOL',
+      name: 'Solana',
+      shares: 8,
+      cost: 100,
+      value: 120,
+      unrealized: 160,
+      stcg_gain: -200,
+      ltcg_gain: 150,
+      wash: 'Watch',
+    }
   ],
 }
 
